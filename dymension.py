@@ -30,7 +30,7 @@ for address in tqdm(addresses, ncols=70):
     try:
         attempt = 0
         point = 0
-        while attempt < 10 and point == 0:
+        while attempt < 3 and point == 0:
             response = requests.get('https://geteligibleuserrequest-xqbg2swtrq-uc.a.run.app/', params=params, headers=headers)
             if response.json()['amount']:
                 point = int(response.json()['amount'])
